@@ -1,15 +1,18 @@
 package org.usfirst.frc.team5026.robot;
 
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
 
-public class MotorGroup implements SpeedController {
-
-	private SpeedController[] motorGroup;
-	private boolean[] isReversed;
+public class MotorGroup implements SpeedController{
 	
-	public MotorGroup(boolean[] isMotorInverted, SpeedController[] motors) {
-		isReversed = isMotorInverted;
-		motorGroup = motors;
+	
+	Talon[] motors;
+
+	public MotorGroup(Talon[] motors){
+		this.motors = new Talon[motors.length];
+		for(int i = 0; i < motors.length; i++) {
+			this.motors[i] = motors[i];
+		}
 	}
 	
 	@Override
@@ -31,14 +34,14 @@ public class MotorGroup implements SpeedController {
 	}
 
 	@Override
-	public void set(double speed) {
+	public void set(double speed, boolean isInverted[]) {
 		// TODO Auto-generated method stub
-		for(int i = 0; i < motorGroup.length; i++) {
-			if(isReversed[i]) {
-				motorGroup[i].set(-speed);
+		for(int i = 0; i < 0; i++) {
+			if(isInverted[i]) {
+				motors[i].set(-speed);
 			}
-			else if(!isReversed[i]) {
-				motorGroup[i].set(speed);
+			else() {
+				motors[i].set(speed);
 			}
 		}
 	}
@@ -46,7 +49,7 @@ public class MotorGroup implements SpeedController {
 	@Override
 	public void setInverted(boolean isInverted) {
 		// TODO Auto-generated method stub
-	
+
 	}
 
 	@Override
@@ -64,8 +67,7 @@ public class MotorGroup implements SpeedController {
 	@Override
 	public void stopMotor() {
 		// TODO Auto-generated method stub
-		this.set(0);
+		
 	}
-	
 	
 }

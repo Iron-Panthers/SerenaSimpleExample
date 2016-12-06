@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Drive extends Subsystem {
 	
     private RobotDrive drive;
-    
     private Hardware hardware;
   
     // Put methods for controlling this subsystem

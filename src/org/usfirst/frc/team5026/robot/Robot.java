@@ -37,13 +37,12 @@ public class Robot extends IterativeRobot {
     	System.out.println("TEST");
     	stick = new Joystick(1);
     	hardware = new Hardware();
-    	drive = new Drive();
 		oi = new OI();
         chooser = new SendableChooser();
         //chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
         SmartDashboard.putNumber("Motor Output", 0.5);
-        
+     	drive = new Drive();
         
     }
 	

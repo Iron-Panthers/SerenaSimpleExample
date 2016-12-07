@@ -1,9 +1,7 @@
 
 package org.usfirst.frc.team5026.robot;
 
-import org.usfirst.frc.team5026.robot.commands.ExampleCommand;
 import org.usfirst.frc.team5026.robot.subsystems.Drive;
-import org.usfirst.frc.team5026.robot.subsystems.ExampleSubsystem;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
@@ -24,7 +22,6 @@ public class Robot extends IterativeRobot {
 	Joystick stick;
 	Drive drive;
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
 	public static Hardware hardware;
 
@@ -39,14 +36,14 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	System.out.println("TEST");
     	stick = new Joystick(1);
+    	hardware = new Hardware();
     	drive = new Drive();
 		oi = new OI();
         chooser = new SendableChooser();
-        chooser.addDefault("Default Auto", new ExampleCommand());
         //chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
         SmartDashboard.putNumber("Motor Output", 0.5);
-        hardware = new Hardware();
+        
         
     }
 	

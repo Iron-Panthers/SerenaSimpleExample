@@ -37,7 +37,8 @@ public class Robot extends IterativeRobot {
      */
    
     public void robotInit() {
-    	stick = new Joystick(0);
+    	System.out.println("TEST");
+    	stick = new Joystick(1);
     	drive = new Drive();
 		oi = new OI();
         chooser = new SendableChooser();
@@ -46,6 +47,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putData("Auto mode", chooser);
         SmartDashboard.putNumber("Motor Output", 0.5);
         hardware = new Hardware();
+        
     }
 	
 	/**

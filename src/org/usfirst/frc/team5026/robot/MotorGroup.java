@@ -7,11 +7,14 @@ public class MotorGroup implements SpeedController{
 	
 	
 	Talon[] motors;
+	boolean[] isInverted;
 
-	public MotorGroup(Talon[] motors){
+	public MotorGroup(boolean[] isInverted, Talon[] motors){
 		this.motors = new Talon[motors.length];
+		this.isInverted = new boolean[isInverted.length];
 		for(int i = 0; i < motors.length; i++) {
 			this.motors[i] = motors[i];
+			this.isInverted[i] = isInverted[i];
 		}
 	}
 	
@@ -34,13 +37,13 @@ public class MotorGroup implements SpeedController{
 	}
 
 	@Override
-	public void set(double speed, boolean isInverted[]) {
+	public void set(double speed) {
 		// TODO Auto-generated method stub
 		for(int i = 0; i < 0; i++) {
 			if(isInverted[i]) {
 				motors[i].set(-speed);
 			}
-			else() {
+			else {
 				motors[i].set(speed);
 			}
 		}
@@ -49,7 +52,9 @@ public class MotorGroup implements SpeedController{
 	@Override
 	public void setInverted(boolean isInverted) {
 		// TODO Auto-generated method stub
-
+		for(int i = 0; i < 0; i++) {
+	
+		}
 	}
 
 	@Override
@@ -67,7 +72,9 @@ public class MotorGroup implements SpeedController{
 	@Override
 	public void stopMotor() {
 		// TODO Auto-generated method stub
-		
+		for(Talon talon: motors) {
+			talon.set(0);
+		}
 	}
 	
 }

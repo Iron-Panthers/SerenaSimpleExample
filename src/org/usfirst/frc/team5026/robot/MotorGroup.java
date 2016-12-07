@@ -21,13 +21,14 @@ public class MotorGroup implements SpeedController{
 	@Override
 	public void pidWrite(double output) {
 		// TODO Auto-generated method stub
-		for(int i = 0; i < motorGroup.length; i++) {
-			if(isReversed[i]) {
-				motorGroup[i].pidWrite(-output);
+		for(int i = 0; i < motors.length; i++) {
+			if(isInverted[i]) {
+				motors[i].pidWrite(-output);
 			}
-			else if(!isReversed[i]) {
-				motorGroup[i].pidWrite(output);
-}
+			else if(!isInverted[i]) {
+				motors[i].pidWrite(output);
+			}
+		}
 	}
 
 	@Override

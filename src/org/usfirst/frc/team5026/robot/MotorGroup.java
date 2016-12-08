@@ -40,12 +40,14 @@ public class MotorGroup implements SpeedController{
 	@Override
 	public void set(double speed, byte syncGroup) {
 		// TODO Auto-generated method stub
-		for(int i = 0; i < 0; i++) {
+		for(int i = 0; i < motors.length; i++) {
 			if(isInverted[i]) {
-				motors[i].set(-speed, syncGroup);
+				motors[i].set(-speed);
+				System.out.println("poo");
 			}
 			else {
-				motors[i].set(speed, syncGroup);
+				motors[i].set(speed);
+				System.out.println("stuff");
 			}
 		}
 	}
@@ -53,7 +55,8 @@ public class MotorGroup implements SpeedController{
 	@Override
 	public void set(double speed) {
 		// TODO Auto-generated method stub
-		for(int i = 0; i < 0; i++) {
+		System.out.println("ugh plz work");
+		for(int i = 0; i < motors.length; i++) {
 			if(isInverted[i]) {
 				motors[i].set(-speed);
 			}

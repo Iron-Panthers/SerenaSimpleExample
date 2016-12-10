@@ -9,5 +9,12 @@ public class Constants {
 	public static final int DRIVE_RIGHT_MOTOR_1 = 6;
 	public static final int DRIVE_RIGHT_MOTOR_2 = 5;
 	public static final int DRIVE_RIGHT_MOTOR_3 = 7;
+	
+	public static final int INTAKE_MOTOR_PORT = 1;
+	
+	public static final int BANNER_SENSOR_PORT = 5;
+	
+	public static final double OUTAKE_SPEED = -0.5;
+	public static final double INTAKE_SPEED = 0.5;
 
 }

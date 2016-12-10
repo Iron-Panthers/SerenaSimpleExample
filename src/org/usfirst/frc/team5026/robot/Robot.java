@@ -2,6 +2,7 @@
 package org.usfirst.frc.team5026.robot;
 
 import org.usfirst.frc.team5026.robot.subsystems.Drive;
+import org.usfirst.frc.team5026.robot.subsystems.Intake;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
@@ -20,7 +21,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 	Joystick stick;
-	Drive drive;
+	public static Drive drive;
+	public static Intake intake;
 
 	public static OI oi;
 	public static Hardware hardware;
@@ -43,6 +45,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putData("Auto mode", chooser);
         SmartDashboard.putNumber("Motor Output", 0.5);
      	drive = new Drive();
+     	intake = new Intake();
         
     }
 	

@@ -1,11 +1,14 @@
 package org.usfirst.frc.team5026.robot;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Talon;
 
 public class Hardware {
 	
 	public MotorGroup leftDrive;
 	public MotorGroup rightDrive;
+	public Talon intake;
+	public DigitalInput bannersensor;
 	
 	public Hardware(){
 		
@@ -18,5 +21,9 @@ public class Hardware {
 		leftDrive = new MotorGroup(leftInverted, leftMotors);
 		rightDrive = new MotorGroup(rightInverted, rightMotors);
 		
+		intake = new Talon(Constants.INTAKE_MOTOR_PORT);
+		
+		bannersensor = new DigitalInput(Constants.BANNER_SENSOR_PORT);
+
 	}
 }

@@ -42,8 +42,7 @@ public class OI {
 	JoystickButton INTAKE;
 	
 	
-	
-	public OI () {
+	public OI() {
 		
 		stick = new Joystick(1);
 		

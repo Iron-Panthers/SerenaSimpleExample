@@ -109,7 +109,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        drive.useArcadeDrive(stick);
+        drive.useArcadeDrive(OI.stick);
         //drive.setLeftRightMotors(.5, .5);
     }
     

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5026.robot.subsystems;
 
+import org.usfirst.frc.team5026.robot.OI;
 import org.usfirst.frc.team5026.robot.Robot;
 import org.usfirst.frc.team5026.robot.triggers.ArcadeDrive;
 
@@ -25,8 +26,7 @@ public class Drive extends Subsystem {
     }
     public void useArcadeDrive(Joystick stick) {
     	//drive.arcadeDrive(stick);
-    	drive.arcadeDrive(stick.getY(), stick.getX());
-    	
+    	drive.arcadeDrive(OI.stick.getY(), OI.stick.getX());
     	
     }
     public void setLeftRightMotors(double leftMotors, double rightMotors) {

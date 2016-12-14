@@ -15,11 +15,9 @@ public class Hardware {
 		Talon[] leftMotors = {new Talon(Constants.DRIVE_LEFT_MOTOR_1),new Talon(Constants.DRIVE_LEFT_MOTOR_2), new Talon(Constants.DRIVE_LEFT_MOTOR_3)};
 		Talon[] rightMotors = {new Talon(Constants.DRIVE_RIGHT_MOTOR_1), new Talon(Constants.DRIVE_RIGHT_MOTOR_2), new Talon(Constants.DRIVE_RIGHT_MOTOR_3)};
 		
-		boolean[] leftInverted = {false, true, false};
-		boolean[] rightInverted = {false, true, false};
 				
-		leftDrive = new MotorGroup(leftInverted, leftMotors);
-		rightDrive = new MotorGroup(rightInverted, rightMotors);
+		leftDrive = new MotorGroup(Constants.DRIVE_LEFT_INVERTED, leftMotors);
+		rightDrive = new MotorGroup(Constants.DRIVE_RIGHT_INVERTED, rightMotors);
 		
 		intake = new Talon(Constants.INTAKE_MOTOR_PORT);
 		

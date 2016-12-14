@@ -20,7 +20,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
-	Joystick stick;
 	public static Drive drive;
 	public static Intake intake;
 
@@ -37,7 +36,6 @@ public class Robot extends IterativeRobot {
    
     public void robotInit() {
     	System.out.println("TEST");
-    	stick = new Joystick(1);
     	hardware = new Hardware();
 		oi = new OI();
         chooser = new SendableChooser();
@@ -110,7 +108,6 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        drive.useArcadeDrive(stick);
         //drive.setLeftRightMotors(.5, .5);
     }
     

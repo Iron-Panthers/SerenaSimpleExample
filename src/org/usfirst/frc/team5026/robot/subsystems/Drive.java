@@ -1,7 +1,7 @@
 package org.usfirst.frc.team5026.robot.subsystems;
 
-import org.usfirst.frc.team5026.robot.Hardware;
 import org.usfirst.frc.team5026.robot.Robot;
+import org.usfirst.frc.team5026.robot.triggers.ArcadeDrive;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -21,6 +21,7 @@ public class Drive extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    	setDefaultCommand(new ArcadeDrive());
     }
     public void useArcadeDrive(Joystick stick) {
     	//drive.arcadeDrive(stick);

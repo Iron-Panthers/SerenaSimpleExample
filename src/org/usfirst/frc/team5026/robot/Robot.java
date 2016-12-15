@@ -111,6 +111,7 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
         drive.useArcadeDrive(OI.stick);
         //drive.setLeftRightMotors(.5, .5);
+        System.out.println(intake.hasBall());
     }
     
     /**
